@@ -1,0 +1,28 @@
+
+body {
+  margin: 0;
+  font-family: serif;
+  background: #f5f0d8;
+  color: #222;
+}
+
+.sheet {
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto;
+  background: #f5f0d8;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+  padding: 2em;
+}
+
+.audio-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  margin: 20px 0;
+}
+
+.audio-btn img {
+  width: 100%;
+}
