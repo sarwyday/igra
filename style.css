@@ -1,28 +1,40 @@
-
-body {
-  margin: 0;
-  font-family: serif;
-  background: #f5f0d8;
-  color: #222;
+@font-face {
+  font-family: "Manuscript";
+  src: url("../fonts/Manuscript.woff2") format("woff2");
 }
 
-.sheet {
-  width: 90vw;
-  height: 90vh;
-  margin: 5vh auto;
-  background: #f5f0d8;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
-  padding: 2em;
+:root{
+  --paper:#f5f0d8;
+  --ink:#222;
 }
 
-.audio-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 60px;
-  margin: 20px 0;
+body{
+  margin:0; font-family:"Manuscript",serif; background:var(--paper); color:var(--ink);
 }
 
-.audio-btn img {
-  width: 100%;
+/* «разворот» для десктопа */
+.desktop .sheet{
+  width:90vw; height:90vh; margin:5vh auto;
+  background:var(--paper) url("../img/texture.jpg");
+  box-shadow:0 0 35px rgba(0,0,0,.4);
+  transform-origin:left;
+  transition:transform 0.8s;
 }
+.desktop .sheet.turn{
+  transform:rotateY(-180deg);
+}
+
+/* мобильная прокрутка */
+@media(max-width:800px){
+  body{font-size:17px;}
+  body.desktop{ /* снимаем эффект книги */ }
+  .sheet{width:100%; height:auto; box-shadow:none;}
+}
+
+/* аудио-кнопка */
+.audio-btn{
+  background:none; border:none; cursor:pointer;
+  width:60px; margin:20px 0;
+}
+.audio-btn img{width:100%;}
+.audio-btn.playing img{filter:hue-rotate(-70deg);}
